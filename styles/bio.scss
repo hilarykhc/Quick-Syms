@@ -1,0 +1,738 @@
+@use "./partials/resets";
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+@use "./partials/typography" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+p,
+body {
+  font-family: "Avenir", Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.hero {
+  background-image: url(/assets/Logo/logo7.png);
+  background-size: cover;
+  position: relative;
+  height: 18rem;
+  width: 100%;
+
+  /*
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $bandsite-black;
+    opacity: 40%;
+  }
+  */
+
+  &__title {
+    font-family: "Avenir", Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    color: $pure-white;
+    position: absolute;
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 1rem;
+    color: $pure-white;
+    position: absolute;
+    padding: 3.25rem 1rem 1rem;
+
+    @include tablet-and-desktop {
+      padding: 2.75rem 2.25rem 1rem;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@include tablet-and-desktop {
+  .hero {
+    height: 30rem;
+
+    &__title {
+      padding-left: 2.25rem;
+      font-size: 3.75rem;
+      padding-top: 11rem;
+    }
+  }
+}
+
+@include desktop {
+  .hero {
+    height: 42rem;
+
+    &__title {
+      padding-left: 6.75rem;
+      padding-top: 17rem;
+    }
+  }
+}
+
+.musicians {
+  background-color: $papayawhip;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  &__img--wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__quote {
+    &--img {
+      width: 100%;
+      max-width: 46rem;
+    }
+
+    &--title {
+      font-size: xx-large;
+      padding: 1.5rem 0 1rem;
+      color: $bandsite-black;
+    }
+
+    &--description {
+      font-weight: bold;
+      font-size: large;
+      padding: 1rem 0 0.5rem;
+      letter-spacing: 0.05rem;
+      line-height: 1.5rem;
+      color: $bandsite-black;
+    }
+
+    &--vocalist {
+      @extend .musicians__quote--description;
+      padding: 0 0 2rem;
+    }
+  }
+
+  &__about {
+    &--title {
+      font-size: large;
+      font-weight: 500;
+      padding: 0 0 1rem;
+    }
+
+    &--description-1 {
+      letter-spacing: 0.01rem;
+      line-height: 1.5rem;
+      color: $bandsite-black;
+    }
+
+    &--description-2 {
+      @extend .musicians__about--description-1;
+      padding-bottom: 1rem;
+    }
+  }
+}
+
+@include tablet-and-desktop {
+  .musicians {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+
+    &__quote {
+      &--title {
+        padding-top: 3rem;
+        padding-bottom: 2.25rem;
+        font-size: 2.25rem;
+      }
+
+      &--img {
+        width: 100%;
+        max-width: 69rem;
+        margin: 0 3rem;
+        max-height: none;
+        padding: 0 3rem;
+      }
+
+      &--description {
+        padding: 2.25rem 3rem 1rem;
+        font-size: 1.35rem;
+        letter-spacing: 0.06rem;
+        line-height: 1.75rem;
+      }
+
+      &--vocalist {
+        font-weight: bold;
+        padding: 0 3rem 3rem;
+        font-size: medium;
+      }
+    }
+
+    &__about {
+      &--wrapper {
+        display: flex;
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+      }
+
+      &--title {
+        font-size: x-large;
+        font-weight: bold;
+        padding: 0 3rem 1rem;
+      }
+
+      &--description-1 {
+        padding: 0 1rem 2.25rem 3rem;
+        letter-spacing: -0.02rem;
+      }
+
+      &--description-2 {
+        padding: 0 3rem 2.25rem 1rem;
+        letter-spacing: -0.02rem;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .musicians {
+    padding-left: 6.75rem;
+    padding-right: 6.75rem;
+
+    &__quote {
+      &--img {
+        margin: 0 5rem;
+        max-height: none;
+        width: 85%;
+        padding: 0;
+      }
+
+      &--description {
+        padding: 0 16rem 1rem 5.25rem;
+      }
+
+      &--vocalist {
+        padding: 0 5.25rem 3rem;
+      }
+    }
+
+    &__about {
+      &--title {
+        padding: 0 5.25rem 1rem;
+      }
+
+      &--description-1 {
+        padding: 0 1rem 2.25rem 5.25rem;
+        letter-spacing: 0.004rem;
+      }
+
+      &--description-2 {
+        padding: 0 5.25rem 2.25rem 1rem;
+        letter-spacing: 0.004rem;
+      }
+    }
+  }
+}
+
+.symptomschecker {
+  background-color: $papayawhip;
+}
+
+.gallery {
+  background-color: $gallery-background;
+
+  &__title {
+    font-size: xx-large;
+    padding: 1.5rem 1rem 1rem;
+    color: $bandsite-black;
+  }
+
+  &__img {
+    max-width: 100%;
+    padding: 0 1rem 1rem;
+    display: block;
+
+    filter: grayscale(100%);
+
+    &:hover {
+      filter: grayscale(0%);
+    }
+  }
+}
+
+@include tablet-and-desktop {
+  .gallery {
+    &__wrapper {
+      padding-bottom: 0.75rem;
+    }
+
+    &__title {
+      padding: 3rem 2.25rem 2.25rem;
+      font-size: 2.25rem;
+    }
+
+    &__images {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 0 0.5rem;
+    }
+
+    &__img {
+      width: 32%;
+      padding: 0 0.75rem 1.5rem;
+    }
+  }
+}
+
+@include desktop {
+  .gallery {
+    &__wrapper {
+      margin: 0 4.5rem;
+    }
+
+    &__images {
+      margin: 0;
+    }
+  }
+}
+
+.comments {
+  &__wrapper {
+    margin: 0 1rem 1rem;
+
+    @include tablet-and-desktop {
+      margin: 0 5.25rem 2.25rem;
+    }
+
+    @include desktop {
+      margin: 0 22.5rem 2.25rem;
+    }
+  }
+
+  &__title {
+    font-size: 2.25rem;
+    padding: 1.5rem 1rem 1rem;
+    color: $bandsite-black;
+
+    @include tablet-and-desktop {
+      padding: 3rem 2.25rem 2.25rem;
+    }
+
+    @include desktop {
+      padding: 3rem 6.75rem 2.25rem;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    padding: 0 0 0 1rem;
+  }
+
+  &__img {
+    background-image: url(/assets/Images/Mohan-muruge.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 3rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    margin-top: 3rem;
+
+    &--none {
+      border-radius: 50%;
+      background-color: $secondary-grey;
+      min-width: 2.7rem;
+      height: 2.5rem;
+    }
+  }
+
+  &__add {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: 0.063rem solid $secondary-grey;
+    padding: 0 0 1rem 0;
+  }
+
+  &__form {
+    background-color: $lemonchiffon;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__name {
+    width: 98%;
+    border-radius: 0.25rem;
+    border: 0.063rem solid $secondary-grey;
+    background-color: $textinput-color;
+    margin: 0.3rem 0 0.9rem 0;
+    padding: 0.75rem;
+
+    &:focus {
+      outline: 0.063rem solid $bandsite-black;
+    }
+
+    &::placeholder {
+      color: $bandsite-black;
+      font-family: "Avenir";
+    }
+  }
+
+  &__textarea {
+    @extend .comments__name;
+    resize: none;
+  }
+
+  &__label {
+    text-transform: uppercase;
+    color: $primary-grey;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  &__button {
+    width: 100%;
+    background-color: $bandsite-black;
+    color: $pure-white;
+    text-transform: uppercase;
+    border-radius: 0.25rem;
+    border: none;
+    padding: 0.672rem 2rem;
+    font-size: medium;
+
+    &:hover {
+      background-color: $pure-black;
+      cursor: pointer;
+    }
+
+    @include tablet-and-desktop {
+      width: initial;
+      padding: 0.672rem 2.5rem;
+      margin-right: 1rem;
+      margin-top: 1rem;
+      margin-left: 41rem;
+    }
+  }
+
+  &--btn {
+    @include tablet-and-desktop {
+      text-align: right;
+    }
+  }
+}
+
+.display-comments {
+  &__card {
+    border-bottom: 0.063rem solid $secondary-grey;
+    display: flex;
+    padding: 0 0 1rem 0;
+  }
+
+  &__content {
+    padding: 0 0 0 1rem;
+    width: 45rem;
+    line-height: 1.5rem;
+
+    @include tablet-and-desktop {
+      width: 100%;
+    }
+  }
+
+  &__list {
+    padding: 0;
+  }
+
+  &__name-date {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__name {
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    color: $bandsite-black;
+  }
+
+  &__date {
+    color: $primary-grey;
+  }
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: $lightyellow;
+  margin-bottom: 3rem;
+}
+
+.diagnosis {
+  padding-top: 2rem;
+}
+
+.footer {
+  background-color: $pure-white;
+  color: $bandsite-black;
+
+  &__wrapper {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  &__title {
+    font-size: xx-large;
+    padding-bottom: 1.25rem;
+  }
+
+  &__icon {
+    margin: 0 2.5rem 0 0;
+    height: 1.5rem;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__contacts {
+    line-height: 1.5rem;
+  }
+
+  &__name {
+    margin-bottom: 0;
+    margin-top: 1.5rem;
+  }
+
+  &__company {
+    font-weight: 600;
+    padding: 0 0 1rem;
+  }
+
+  &__address {
+    padding: 0 0 1rem;
+  }
+
+  &__email {
+    &--link {
+      color: $pure-white;
+      text-decoration: none;
+    }
+  }
+
+  &__logo {
+    &--mobile {
+      margin: 5rem 0 1rem;
+      width: 10.25rem;
+    }
+
+    &--wrapper {
+      display: none;
+    }
+  }
+}
+
+@include tablet-and-desktop {
+  .footer {
+    &__wrapper {
+      padding: 0 2.25rem 2.25rem;
+    }
+
+    &__title {
+      padding: 0 2.5rem 0.75rem 0;
+      font-size: 2.25rem;
+    }
+
+    &__medias {
+      display: flex;
+      align-items: center;
+      padding-top: 3rem;
+    }
+
+    &__logo {
+      &--mobile {
+        display: none;
+      }
+
+      &--wrapper {
+        display: flex;
+        padding-top: 3.25rem;
+      }
+    }
+
+    &__wrapper--tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__contacts {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+
+    &__detail {
+      line-height: 1.4rem;
+    }
+
+    &__copyright {
+      padding-top: 3rem;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@include desktop {
+  .footer {
+    &__wrapper {
+      padding: 0 6.75rem 2.25rem;
+    }
+
+    &__contacts {
+      justify-content: start;
+    }
+
+    &__detail {
+      padding-right: 3rem;
+    }
+  }
+}
+
+.footer {
+  background-color: $pure-white;
+  color: $bandsite-black;
+
+  &__wrapper {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  &__title {
+    font-size: xx-large;
+    padding-bottom: 1.25rem;
+  }
+
+  &__icon {
+    margin: 0 2.5rem 0 0;
+    height: 1.5rem;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__contacts {
+    line-height: 1.5rem;
+  }
+
+  &__name {
+    margin-bottom: 0;
+    margin-top: 1.5rem;
+  }
+
+  &__company {
+    font-weight: 600;
+    padding: 0 0 1rem;
+  }
+
+  &__address {
+    padding: 0 0 1rem;
+  }
+
+  &__email {
+    &--link {
+      color: $pure-white;
+      text-decoration: none;
+    }
+  }
+
+  &__logo {
+    &--mobile {
+      margin: 5rem 0 1rem;
+      width: 10.25rem;
+    }
+
+    &--wrapper {
+      display: none;
+    }
+  }
+}
+
+@include tablet-and-desktop {
+  .footer {
+    &__wrapper {
+      padding: 0 2.25rem 2.25rem;
+    }
+
+    &__title {
+      padding: 0 2.5rem 0.75rem 0;
+      font-size: 2.25rem;
+    }
+
+    &__medias {
+      display: flex;
+      align-items: center;
+      padding-top: 3rem;
+    }
+
+    &__logo {
+      &--mobile {
+        display: none;
+      }
+
+      &--tablet {
+        width: 10.25rem;
+      }
+
+      &--wrapper {
+        display: flex;
+        padding-top: 2.25rem;
+      }
+    }
+
+    &__wrapper--tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__contacts {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+
+    &__detail {
+      line-height: 1.4rem;
+    }
+
+    &__copyright {
+      padding-top: 3rem;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@include desktop {
+  .footer {
+    &__wrapper {
+      padding: 0 6.75rem 2.25rem;
+    }
+
+    &__contacts {
+      justify-content: start;
+    }
+
+    &__detail {
+      padding-right: 3rem;
+    }
+  }
+}

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickSyms</title>
+    <link rel="stylesheet" href="styles/partials/global.css" />
+    <link rel="stylesheet" href="styles/bio.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./scripts/band-site-api.js" defer></script>
+    <script src="./scripts/form.js" defer></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__wrapper">
+        <div class="header__brand">
+          <a class="header__link" href="index.html">
+            <img
+              class="header__logo"
+              src="/assets/Logo/logo2.png"
+              alt="logo name QuickSyms"
+            />
+          </a>
+        </div>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item nav__item--active">
+              <a class="nav__link nav__link--active" href="index.html">Home</a>
+            </li>
+            <li class="nav__item nav__item--inactive">
+              <a class="nav__link nav__link--inactive" href="/pages/story.html"
+                >Story</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero__section">
+        <h1 class="hero__title"></h1>
+        <h2 class="hero__subtitle"></h2>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="gallery__wrapper">
+        <h2 class="gallery__title">Our Story</h2>
+        <div class="gallery__images">
+          <img
+            src="/assets/Images/hand and pills.jpg"
+            alt="hand holding pills"
+            class="gallery__img"
+          />
+          <img
+            src="/assets/Images/pills and s 2.jpg"
+            alt="pills and stethoscope"
+            class="gallery__img"
+          />
+          <img
+            src="/assets/Images/crutches.jpg"
+            alt="a pair of crutches"
+            class="gallery__img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="musicians">
+      <div class="musicians__quote">
+        <h2 class="musicians__quote--title">What is QuickSyms?</h2>
+        <div class="musicians__img--wrapper">
+          <img
+            class="musicians__quote--img"
+            src="/assets/Images/team.jpg"
+            alt="team of healthcare workers"
+          />
+        </div>
+        <p class="musicians__quote--description">
+          “Stop screaming at us and start screening.”
+        </p>
+        <p class="musicians__quote--vocalist">- Promise Prowess</p>
+      </div>
+      <div class="musicians__about">
+        <h2 class="musicians__about--title">Our Team and Our Story</h2>
+        <div class="musicians__about--wrapper">
+          <p class="musicians__about--description-1">
+            The QuickSyms is a pop rock band originating from San Francisco,
+            California. The band consists of lead vocalist Bryan Teddy,
+            guitarist Mack Tolkens, guitarist Andrew Green, bassist Kent Zulkee
+            and drummer Freddie Fischer. The band achieved its first commercial
+            success as an unsigned act, drawing attention from manager Cam
+            Adams. Having worked with other popular acts (The Elephant In The
+            Room, One Trick Pony, The Cat’s Meow), Adams was confident the band
+            could succeed even further, pushing them to sign with Magenta
+            Records.
+          </p>
+          <br />
+          <p class="musicians__about--description-2">
+            From there, the band has soared, gaining international recognition
+            and ranking in the top 10 on the Poster Charts. New fans immediately
+            fell in love with the band’s original and organic attitude,
+            solidifying their place as one of the hottest and fastest up and
+            coming acts of this century. Fans affectionately refer to themselves
+            as “The Hive” and are drawn to their candid and authentic
+            performances on stage. Looking forward to touring in the future, The
+            Bees Knees are currently recording their second studio album,
+            looking to be released in late 2021.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="comments">
+      <h2 class="comments__title">Start Screening</h2>
+      <div class="comments__wrapper">
+        <div class="comments__add">
+          <div class="comments__img"></div>
+          <div class="comments__form">
+            <form id="form" action="submit" method="POST">
+              <div>
+                <ul class="comments__list">
+                  <li class="comments__item">
+                    <label class="comments__label" for="name">Name</label>
+                    <input
+                      class="comments__name"
+                      type="text"
+                      id="name"
+                      name="user_name"
+                      placeholder="Enter your name"
+                    />
+                  </li>
+                  <li class="comments__item">
+                    <label class="comments__label" for="comment"
+                      >Symptoms</label
+                    >
+                    <textarea
+                      class="comments__textarea"
+                      type="text"
+                      id="comment"
+                      name="user_comment"
+                      rows="4"
+                      cols="30"
+                      spellcheck="true"
+                      placeholder="Briefly describe your symptoms"
+                    ></textarea>
+                  </li>
+                  <li class="comments--btn">
+                    <button
+                      class="comments__button"
+                      id="add-comment"
+                      type="submit"
+                    >
+                      Submit
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </form>
+          </div>
+        </div>
+        <h2 class="diagnosis">Diagnosis</h2>
+        <div class="display-comments__container" id="displayCommentsContainer">
+          <!--JS insert-->
+        </div>
+      </div>
+    </section>
+
+    <section class="musicians symptomschecker">
+      <div class="musicians__quote">
+        <h2 class="musicians__quote--title">Symptoms Checker</h2>
+        <div class="musicians__img--wrapper"></div>
+        <p class="musicians__quote--description">
+          Please check all that applies to you.
+        </p>
+        <p class="musicians__quote--vocalist"></p>
+      </div>
+      <div class="musicians__about">
+        <h2 class="musicians__about--title"></h2>
+        <div class="musicians__about--wrapper">
+          <p class="musicians__about--description-1"></p>
+          <form
+            id="checklist-form"
+            class="checklist"
+            action="submit"
+            method="POST"
+          >
+            <label class="checklist__input"
+              >symptom 1
+              <input type="checkbox" name="symptom" class="symptom-checkbox" />
+            </label>
+            <label class="checklist__input"
+              >symptom 2
+              <input type="checkbox" name="symptom" class="symptom-checkbox" />
+            </label>
+            <label class="checklist__input"
+              >symptom 3
+              <input type="checkbox" name="symptom" class="symptom-checkbox" />
+            </label>
+
+            <button class="comments__button" id="add-comment" type="submit">
+              Submit
+            </button>
+          </form>
+
+          <p class="musicians__about--description-2"></p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__wrapper">
+        <div class="footer__content">
+          <div class="footer__wrapper--tablet">
+            <div class="footer__medias">
+              <h2 class="footer__title">Promise Prowess</h2>
+              <div class="footer__links">
+                <a class="footer__link" href="#">
+                  <img
+                    class="footer__icon"
+                    src="/assets/Icons/SVG/Icon-instagram.svg"
+                    alt="instagram icon"
+                  />
+                </a>
+                <a class="footer__link" href="#">
+                  <img
+                    class="footer__icon"
+                    src="/assets/Icons/SVG/Icon-facebook.svg"
+                    alt="facebook icon"
+                  />
+                </a>
+                <a class="footer__link" href="#">
+                  <img
+                    class="footer__icon"
+                    src="/assets/Icons/SVG/Icon-twitter.svg"
+                    alt="twitter icon"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="footer__logo--wrapper">
+              <a class="footer__link--tablet" href="index.html">
+                <img
+                  class="footer__logo--tablet"
+                  src="/assets/Logo/logo2.png"
+                  alt="logo name QuickSyms"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="footer__contacts">
+            <div class="footer__detail">
+              <div>
+                <h4 class="footer__name">Elyse W.</h4>
+                <p class="footer__company">The Bees Knees Management</p>
+              </div>
+              <div>
+                <p class="footer__address">
+                  503 Broadway Penthouse,<br />New York, NY 10012, USA
+                </p>
+              </div>
+              <div>
+                <p class="footer__email">
+                  <a
+                    class="footer__email--link"
+                    href="mailto:info@thebeesknees.com"
+                    >info@thebeeskness.com
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div class="footer__detail">
+              <div>
+                <h4 class="footer__name">Meg H.</h4>
+                <p class="footer__company">Limitless Artist Group</p>
+              </div>
+              <div>
+                <p class="footer__address">
+                  Booking Agent for<br />US / South America / Japan
+                </p>
+              </div>
+              <div>
+                <p class="footer__email">
+                  <a
+                    class="footer__email--link"
+                    href="mailto:pearl.gregg@limitlessag.com"
+                    >pearl.gregg@limitlessag.com
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div class="footer__detail">
+              <div>
+                <h4 class="footer__name">Hilary C.</h4>
+                <p class="footer__company">ARCH Entertainment</p>
+              </div>
+              <div>
+                <p class="footer__address">
+                  Booking Agent for<br />UK / EU / AU
+                </p>
+              </div>
+              <div>
+                <p class="footer__email">
+                  <a
+                    class="footer__email--link"
+                    href="mailto:cwhyte@archentertainment.com"
+                    >cwhyte@archentertainment.com
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="footer__logo">
+            <a class="footer__link--mobile" href="index.html"
+              ><img
+                class="footer__logo--mobile"
+                src="/assets/Logo/Logo-bandsite.svg"
+                alt="QuickSyms logo"
+              />
+            </a>
+            <p class="footer__copyright">
+              Copyright QuickSyms © 2024 All Rights Reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

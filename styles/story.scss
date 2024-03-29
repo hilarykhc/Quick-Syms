@@ -1,0 +1,293 @@
+@use "./partials/resets";
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+@use "./partials/typography" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+p,
+body {
+  font-family: "Avenir";
+  margin: 0;
+}
+
+.hero {
+  background-image: url(/assets/Images/pink\ pills.jpg);
+  background-size: cover;
+  position: relative;
+  height: 25rem;
+  width: 100%;
+
+  @include tablet-and-desktop {
+    height: 32rem;
+  }
+
+  @include desktop {
+    height: 38rem;
+  }
+  /*
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $bandsite-black;
+    opacity: 40%;
+  }
+*/
+  &__section {
+    @include tablet-and-desktop {
+      padding-top: 0.25rem;
+    }
+
+    @include desktop {
+      padding-top: 10rem;
+      padding-left: 5rem;
+    }
+  }
+
+  &__title {
+    font-family: "Avenir";
+    font-size: xx-large;
+    color: $pure-white;
+    position: absolute;
+    padding-left: 1rem;
+    padding-top: 5rem;
+    max-width: 22rem;
+
+    @include tablet-and-desktop {
+      padding-left: 2.25rem;
+      padding-top: 5.5rem;
+      font-size: 3.5rem;
+      width: 35rem;
+      max-width: none;
+    }
+
+    @include desktop {
+      width: 33rem;
+    }
+  }
+
+  &__album {
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: $pure-white;
+    position: absolute;
+    padding: 2.75rem 1rem 1rem;
+
+    @include tablet-and-desktop {
+      padding: 2.75rem 2.25rem 1rem;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__iframe {
+    margin: 12rem 1rem 0;
+    width: 92%;
+    position: absolute;
+    border: none;
+    border-radius: 0.3rem;
+
+    @include tablet-and-desktop {
+      margin: 18rem 2.25rem 0;
+      width: 43%;
+      min-width: 26rem;
+    }
+
+    @include desktop {
+      padding-left: 7rem;
+      margin: 5.5rem 2.25rem 0 38rem;
+    }
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+.concerts {
+  @include desktop {
+    &__container {
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 3rem;
+    }
+  }
+}
+
+.shows {
+  &__list {
+    list-style-type: none;
+    padding: 0 1rem;
+    margin: 0 0 1rem;
+
+    @include tablet-and-desktop {
+      padding: 0 1.25rem;
+    }
+  }
+
+  &__location {
+    @include desktop {
+      padding-right: 1.95rem;
+    }
+  }
+
+  &__title-name {
+    font-size: xx-large;
+    padding: 1.5rem 1rem 0;
+
+    @include tablet-and-desktop {
+      padding: 3rem 2.25rem 1rem;
+      font-size: 2.25rem;
+    }
+
+    @include desktop {
+      padding: 0;
+    }
+  }
+
+  &__wrapper {
+    @include desktop {
+      width: 50rem;
+    }
+  }
+
+  &__subhead--tabletAndDesktop {
+    display: none;
+
+    @include tablet-and-desktop {
+      display: flex;
+      padding-left: 1rem;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 65%;
+
+      @include desktop {
+        width: 63%;
+      }
+    }
+  }
+
+  &__label {
+    color: $primary-grey;
+    text-transform: uppercase;
+    padding: 1rem 0 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    @include tablet-and-desktop {
+      display: none;
+    }
+  }
+
+  &__date {
+    color: $primary-grey;
+    text-transform: uppercase;
+    padding: 1rem 0 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  &__venue {
+    @extend .shows__date;
+    padding-left: 0.5rem;
+
+    @include tablet-and-desktop {
+      padding-left: 1rem;
+    }
+  }
+
+  &__location {
+    @extend .shows__date;
+
+    @include tablet-and-desktop {
+      padding-right: 2rem;
+    }
+  }
+
+  &__button {
+    color: $pure-white;
+    background-color: $bandsite-black;
+    text-transform: uppercase;
+    border-radius: 0.25rem;
+    border: none;
+    width: 100%;
+    padding: 0.672rem 2rem;
+    margin: 1rem 0 0;
+    font-size: medium;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include tablet-and-desktop {
+      margin: 0 0 0 1.5rem;
+    }
+
+    @include desktop {
+      margin: 0 0 0 2.75rem;
+    }
+  }
+
+  &__cards {
+    border-bottom: 0.063rem solid $secondary-grey;
+    padding: 0 0 1rem 0;
+    flex-direction: column;
+    line-height: 1.75rem;
+
+    &--selected {
+      background-color: $secondary-grey;
+    }
+
+    &:not(.shows__cards--selected):hover {
+      background-color: $gallery-background;
+      cursor: pointer;
+    }
+
+    &--sublist {
+      padding: 0;
+    }
+
+    @include tablet-and-desktop {
+      padding: 1rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      &--sublist {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &__info {
+    &--date {
+      font-weight: 500;
+
+      @include tablet-and-desktop {
+        min-width: 8.5rem;
+      }
+    }
+
+    &--venue {
+      @include tablet-and-desktop {
+        min-width: 8.5rem;
+      }
+    }
+
+    &--location {
+      @extend .shows__info--venue;
+    }
+  }
+}

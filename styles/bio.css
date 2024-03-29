@@ -1,0 +1,616 @@
+@font-face {
+  font-family: "Avenir";
+  src: url("/assets/Font/AvenirNextLTPro-Bold.otf");
+  src: url("/assets/Font/Alternative files/AvenirNextLTPro-Bold");
+  font-weight: bolder;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("/assets/Font/AvenirNextLTPro-Demi.otf");
+  src: url("/assets/Font/Alternative files/AvenirNextLTPro-Demi");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("/assets/Font/AvenirNextLTPro-Regular.otf");
+  src: url("/assets/Font/Alternative files/AvenirNextLTPro-Regular");
+  font-weight: normal;
+  font-style: normal;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+p,
+body {
+  font-family: "Avenir", Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.hero {
+  background-image: url(/assets/Logo/logo7.png);
+  background-size: cover;
+  position: relative;
+  height: 18rem;
+  width: 100%;
+  /*
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $bandsite-black;
+    opacity: 40%;
+  }
+  */
+}
+.hero__title {
+  font-family: "Avenir", Arial, Helvetica, sans-serif;
+  font-size: xx-large;
+  color: #ffffff;
+  position: absolute;
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+.hero__subtitle {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #ffffff;
+  position: absolute;
+  padding: 3.25rem 1rem 1rem;
+}
+@media screen and (min-width: 768px) {
+  .hero__subtitle {
+    padding: 2.75rem 2.25rem 1rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    height: 30rem;
+  }
+  .hero__title {
+    padding-left: 2.25rem;
+    font-size: 3.75rem;
+    padding-top: 11rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero {
+    height: 42rem;
+  }
+  .hero__title {
+    padding-left: 6.75rem;
+    padding-top: 17rem;
+  }
+}
+.musicians {
+  background-color: #ffefd5;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.musicians__img--wrapper {
+  display: flex;
+  justify-content: center;
+}
+.musicians__quote--img {
+  width: 100%;
+  max-width: 46rem;
+}
+.musicians__quote--title {
+  font-size: xx-large;
+  padding: 1.5rem 0 1rem;
+  color: #323232;
+}
+.musicians__quote--description, .musicians__quote--vocalist {
+  font-weight: bold;
+  font-size: large;
+  padding: 1rem 0 0.5rem;
+  letter-spacing: 0.05rem;
+  line-height: 1.5rem;
+  color: #323232;
+}
+.musicians__quote--vocalist {
+  padding: 0 0 2rem;
+}
+.musicians__about--title {
+  font-size: large;
+  font-weight: 500;
+  padding: 0 0 1rem;
+}
+.musicians__about--description-1, .musicians__about--description-2 {
+  letter-spacing: 0.01rem;
+  line-height: 1.5rem;
+  color: #323232;
+}
+.musicians__about--description-2 {
+  padding-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .musicians {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+  .musicians__quote--title {
+    padding-top: 3rem;
+    padding-bottom: 2.25rem;
+    font-size: 2.25rem;
+  }
+  .musicians__quote--img {
+    width: 100%;
+    max-width: 69rem;
+    margin: 0 3rem;
+    max-height: none;
+    padding: 0 3rem;
+  }
+  .musicians__quote--description, .musicians__quote--vocalist {
+    padding: 2.25rem 3rem 1rem;
+    font-size: 1.35rem;
+    letter-spacing: 0.06rem;
+    line-height: 1.75rem;
+  }
+  .musicians__quote--vocalist {
+    font-weight: bold;
+    padding: 0 3rem 3rem;
+    font-size: medium;
+  }
+  .musicians__about--wrapper {
+    display: flex;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+  .musicians__about--title {
+    font-size: x-large;
+    font-weight: bold;
+    padding: 0 3rem 1rem;
+  }
+  .musicians__about--description-1, .musicians__about--description-2 {
+    padding: 0 1rem 2.25rem 3rem;
+    letter-spacing: -0.02rem;
+  }
+  .musicians__about--description-2 {
+    padding: 0 3rem 2.25rem 1rem;
+    letter-spacing: -0.02rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .musicians {
+    padding-left: 6.75rem;
+    padding-right: 6.75rem;
+  }
+  .musicians__quote--img {
+    margin: 0 5rem;
+    max-height: none;
+    width: 85%;
+    padding: 0;
+  }
+  .musicians__quote--description, .musicians__quote--vocalist {
+    padding: 0 16rem 1rem 5.25rem;
+  }
+  .musicians__quote--vocalist {
+    padding: 0 5.25rem 3rem;
+  }
+  .musicians__about--title {
+    padding: 0 5.25rem 1rem;
+  }
+  .musicians__about--description-1, .musicians__about--description-2 {
+    padding: 0 1rem 2.25rem 5.25rem;
+    letter-spacing: 0.004rem;
+  }
+  .musicians__about--description-2 {
+    padding: 0 5.25rem 2.25rem 1rem;
+    letter-spacing: 0.004rem;
+  }
+}
+.symptomschecker {
+  background-color: #ffefd5;
+}
+
+.gallery {
+  background-color: #fafafa;
+}
+.gallery__title {
+  font-size: xx-large;
+  padding: 1.5rem 1rem 1rem;
+  color: #323232;
+}
+.gallery__img {
+  max-width: 100%;
+  padding: 0 1rem 1rem;
+  display: block;
+  filter: grayscale(100%);
+}
+.gallery__img:hover {
+  filter: grayscale(0%);
+}
+
+@media screen and (min-width: 768px) {
+  .gallery__wrapper {
+    padding-bottom: 0.75rem;
+  }
+  .gallery__title {
+    padding: 3rem 2.25rem 2.25rem;
+    font-size: 2.25rem;
+  }
+  .gallery__images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 0.5rem;
+  }
+  .gallery__img {
+    width: 32%;
+    padding: 0 0.75rem 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .gallery__wrapper {
+    margin: 0 4.5rem;
+  }
+  .gallery__images {
+    margin: 0;
+  }
+}
+.comments__wrapper {
+  margin: 0 1rem 1rem;
+}
+@media screen and (min-width: 768px) {
+  .comments__wrapper {
+    margin: 0 5.25rem 2.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comments__wrapper {
+    margin: 0 22.5rem 2.25rem;
+  }
+}
+.comments__title {
+  font-size: 2.25rem;
+  padding: 1.5rem 1rem 1rem;
+  color: #323232;
+}
+@media screen and (min-width: 768px) {
+  .comments__title {
+    padding: 3rem 2.25rem 2.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comments__title {
+    padding: 3rem 6.75rem 2.25rem;
+  }
+}
+.comments__list {
+  list-style-type: none;
+  padding: 0 0 0 1rem;
+}
+.comments__img {
+  background-image: url(/assets/Images/Mohan-muruge.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 3rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-top: 3rem;
+}
+.comments__img--none {
+  border-radius: 50%;
+  background-color: #e1e1e1;
+  min-width: 2.7rem;
+  height: 2.5rem;
+}
+.comments__add {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 0.063rem solid #e1e1e1;
+  padding: 0 0 1rem 0;
+}
+.comments__form {
+  background-color: #fffacd;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.comments__name, .comments__textarea {
+  width: 98%;
+  border-radius: 0.25rem;
+  border: 0.063rem solid #e1e1e1;
+  background-color: #fcfcfc;
+  margin: 0.3rem 0 0.9rem 0;
+  padding: 0.75rem;
+}
+.comments__name:focus, .comments__textarea:focus {
+  outline: 0.063rem solid #323232;
+}
+.comments__name::-moz-placeholder, .comments__textarea::-moz-placeholder {
+  color: #323232;
+  font-family: "Avenir";
+}
+.comments__name::placeholder, .comments__textarea::placeholder {
+  color: #323232;
+  font-family: "Avenir";
+}
+.comments__textarea {
+  resize: none;
+}
+.comments__label {
+  text-transform: uppercase;
+  color: #afafaf;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.comments__button {
+  width: 100%;
+  background-color: #323232;
+  color: #ffffff;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  border: none;
+  padding: 0.672rem 2rem;
+  font-size: medium;
+}
+.comments__button:hover {
+  background-color: #000000;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .comments__button {
+    width: initial;
+    padding: 0.672rem 2.5rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-left: 41rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .comments--btn {
+    text-align: right;
+  }
+}
+
+.display-comments__card {
+  border-bottom: 0.063rem solid #e1e1e1;
+  display: flex;
+  padding: 0 0 1rem 0;
+}
+.display-comments__content {
+  padding: 0 0 0 1rem;
+  width: 45rem;
+  line-height: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .display-comments__content {
+    width: 100%;
+  }
+}
+.display-comments__list {
+  padding: 0;
+}
+.display-comments__name-date {
+  display: flex;
+  justify-content: space-between;
+}
+.display-comments__name {
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  color: #323232;
+}
+.display-comments__date {
+  color: #afafaf;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: #ffffe0;
+  margin-bottom: 3rem;
+}
+
+.diagnosis {
+  padding-top: 2rem;
+}
+
+.footer {
+  background-color: #ffffff;
+  color: #323232;
+}
+.footer__wrapper {
+  padding: 1.5rem 1rem 1rem;
+}
+.footer__title {
+  font-size: xx-large;
+  padding-bottom: 1.25rem;
+}
+.footer__icon {
+  margin: 0 2.5rem 0 0;
+  height: 1.5rem;
+}
+.footer__link {
+  text-decoration: none;
+}
+.footer__contacts {
+  line-height: 1.5rem;
+}
+.footer__name {
+  margin-bottom: 0;
+  margin-top: 1.5rem;
+}
+.footer__company {
+  font-weight: 600;
+  padding: 0 0 1rem;
+}
+.footer__address {
+  padding: 0 0 1rem;
+}
+.footer__email--link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.footer__logo--mobile {
+  margin: 5rem 0 1rem;
+  width: 10.25rem;
+}
+.footer__logo--wrapper {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__wrapper {
+    padding: 0 2.25rem 2.25rem;
+  }
+  .footer__title {
+    padding: 0 2.5rem 0.75rem 0;
+    font-size: 2.25rem;
+  }
+  .footer__medias {
+    display: flex;
+    align-items: center;
+    padding-top: 3rem;
+  }
+  .footer__logo--mobile {
+    display: none;
+  }
+  .footer__logo--wrapper {
+    display: flex;
+    padding-top: 3.25rem;
+  }
+  .footer__wrapper--tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer__contacts {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+  }
+  .footer__detail {
+    line-height: 1.4rem;
+  }
+  .footer__copyright {
+    padding-top: 3rem;
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer__wrapper {
+    padding: 0 6.75rem 2.25rem;
+  }
+  .footer__contacts {
+    justify-content: start;
+  }
+  .footer__detail {
+    padding-right: 3rem;
+  }
+}
+.footer {
+  background-color: #ffffff;
+  color: #323232;
+}
+.footer__wrapper {
+  padding: 1.5rem 1rem 1rem;
+}
+.footer__title {
+  font-size: xx-large;
+  padding-bottom: 1.25rem;
+}
+.footer__icon {
+  margin: 0 2.5rem 0 0;
+  height: 1.5rem;
+}
+.footer__link {
+  text-decoration: none;
+}
+.footer__contacts {
+  line-height: 1.5rem;
+}
+.footer__name {
+  margin-bottom: 0;
+  margin-top: 1.5rem;
+}
+.footer__company {
+  font-weight: 600;
+  padding: 0 0 1rem;
+}
+.footer__address {
+  padding: 0 0 1rem;
+}
+.footer__email--link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.footer__logo--mobile {
+  margin: 5rem 0 1rem;
+  width: 10.25rem;
+}
+.footer__logo--wrapper {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__wrapper {
+    padding: 0 2.25rem 2.25rem;
+  }
+  .footer__title {
+    padding: 0 2.5rem 0.75rem 0;
+    font-size: 2.25rem;
+  }
+  .footer__medias {
+    display: flex;
+    align-items: center;
+    padding-top: 3rem;
+  }
+  .footer__logo--mobile {
+    display: none;
+  }
+  .footer__logo--tablet {
+    width: 10.25rem;
+  }
+  .footer__logo--wrapper {
+    display: flex;
+    padding-top: 2.25rem;
+  }
+  .footer__wrapper--tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer__contacts {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+  }
+  .footer__detail {
+    line-height: 1.4rem;
+  }
+  .footer__copyright {
+    padding-top: 3rem;
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer__wrapper {
+    padding: 0 6.75rem 2.25rem;
+  }
+  .footer__contacts {
+    justify-content: start;
+  }
+  .footer__detail {
+    padding-right: 3rem;
+  }
+}/*# sourceMappingURL=bio.css.map */
